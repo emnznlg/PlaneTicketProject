@@ -1,6 +1,5 @@
 package PlaneTicketProject;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class LoginOperations {
@@ -52,19 +51,8 @@ public class LoginOperations {
         } while (true);
 
 
-        System.out.println("Please enter your Gmail email address");
+        System.out.println("Please enter your Gmail address");
         String userEmail = input.next();
-
-        do {
-            if(userEmail.substring(userEmail.length() - 10).equals("@gmail.com")) {
-                break;
-            }else {
-                System.out.println(userEmail.substring(userEmail.length() - 10));
-                System.out.println("You can only register with a Gmail account. Please enter a valid Gmail account.");
-                userEmail = input.next();
-            }
-        }while (true);
-
 
         System.out.println("Please enter your password");
         String userPassword = input.next();
@@ -73,7 +61,7 @@ public class LoginOperations {
         DatabaseOperations.customerInformation.put(userEmail, customer);
         DatabaseOperations.emailsAndPasswords.put(userEmail, userPassword);
 
-        System.out.println("You have successfully signed up! Welcome to buycheaptickets.com.");
+        System.out.println("You have successfully registered! Welcome to buycheaptickets.com.");
         UserDashboard.accountMenu(customer);
     }
 

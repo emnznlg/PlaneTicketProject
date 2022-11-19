@@ -1,7 +1,6 @@
 package PlaneTicketProject;
 
 import java.time.LocalDate;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -205,6 +204,7 @@ public class UserDashboard {
             if (userInp.equals("1")) {
                 System.out.println("Please enter your new email address:");
                 String newEmail = input.next();
+
                 String customerpassword = DatabaseOperations.emailsAndPasswords.get(customer.getEmail());
                 String oldEmail = customer.getEmail();
                 customer.setEmail(newEmail);
